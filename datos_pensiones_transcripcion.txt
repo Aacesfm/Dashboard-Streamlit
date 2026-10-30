@@ -1,0 +1,184 @@
+TRANSCRIPCIÓN CONSOLIDADA DE LAS CINCO FOTOGRAFÍAS
+Diccionario de datos, escenarios pensionarios y tipos de datos propuestos para modelado
+
+NOTA SOBRE EL ALCANCE
+Se transcribe la información legible de las capturas. Las fotografías muestran
+fragmentos de una tabla y de un bloque de código, no los documentos completos.
+No se reconstruyen ni se inventan las filas que quedaron fuera de pantalla.
+Se omiten elementos de la interfaz (como «y 2 más» y «Mostrar más líneas»)
+porque no son parte de los datos.
+
+======================================================================
+1. DICCIONARIO DE DATOS: INFORMACIÓN DEL CLIENTE
+======================================================================
+
+Columna: id_cliente
+Tipo de dato: String
+Descripción: Identificador único del cliente. Incluye prefijo del régimen
+(IMSS73, IMSS97, ISSSTE) y un consecutivo.
+
+Columna: nombre
+Tipo de dato: String
+Descripción: Nombre(s) del cliente.
+
+Columna: ap_paterno
+Tipo de dato: String
+Descripción: Apellido paterno.
+
+Columna: ap_materno
+Tipo de dato: String
+Descripción: Apellido materno.
+
+Columna: age
+Tipo de dato: Integer
+Descripción: Edad actual del cliente en años.
+
+Columna: f_nacim
+Tipo de dato: Date
+Descripción: Fecha de nacimiento. En IMSS73 aparece generalmente en formato
+YYYY-MM-DD; en IMSS97 e ISSSTE se observa formato MM/DD/YYYY.
+
+Columna: genero
+Tipo de dato: String(1)
+Descripción: Género del trabajador. Valores observados: H (hombre), M (mujer).
+
+Columna: entidad
+Tipo de dato: String
+Descripción: Código abreviado de la entidad federativa asociada al cliente.
+Ejemplos: DF, NL, CH, BC, etc.
+
+[Las fotografías no muestran las filas intermedias de esta tabla.]
+
+======================================================================
+2. DICCIONARIO DE DATOS: SALDOS Y AHORRO
+======================================================================
+
+Columna: saldo_ahorro_solidario
+Tipo de dato: Decimal(18,2)
+Descripción: Saldo acumulado por ahorro solidario (principalmente relevante
+en ISSSTE). En muchos registros IMSS aparece en cero.
+
+Columna: porcentaje_ahorro_solidario
+Tipo de dato: Integer / Nullable
+Descripción: Porcentaje de ahorro solidario elegido por el trabajador.
+Valores observados: 1, 2 o nulo. Más relevante para ISSSTE.
+
+Columna: saldo_bono_pension
+Tipo de dato: Decimal(18,2)
+Descripción: Saldo del Bono de Pensión. Aplica principalmente a trabajadores
+ISSSTE en cuentas individuales.
+
+Columna: saldo_av
+Tipo de dato: Decimal(18,2)
+Descripción: Saldo acumulado de aportaciones voluntarias. Puede ser cero
+cuando el cliente no tiene ahorro voluntario.
+
+Columna: saldo_vivienda
+Tipo de dato: Decimal(18,2)
+Descripción: Saldo disponible en subcuenta de vivienda (INFONAVIT o FOVISSSTE
+según el régimen).
+
+Columna: av_mensual
+Tipo de dato: Decimal(18,2)
+Descripción: Monto de aportación voluntaria mensual que realiza el cliente.
+Puede ser cero si no realiza ahorro voluntario periódico.
+
+======================================================================
+3. DICCIONARIO DE DATOS: RÉGIMEN Y ESCENARIO PENSIONARIO
+======================================================================
+
+Columna: regimen_estimado
+Tipo de dato: String
+Descripción: Régimen pensionario identificado para el cliente
+(IMSS73, IMSS97, ISSSTE).
+
+Columna: ley_bandera
+Tipo de dato: String
+Descripción: Ley aplicable al cálculo pensionario. Valores observados:
+LEY_73, LEY_97, LEY_ISSSTE.
+
+Columna: escenario_estimado
+Tipo de dato: String
+Descripción: Resultado o escenario pensionario calculado para el cliente.
+Define la ruta de beneficio esperada.
+
+======================================================================
+4. CATÁLOGO DE ESCENARIOS OBSERVADOS
+======================================================================
+
+4.1. IMSS Ley 73
+Valores encontrados en escenario_estimado:
+
+IMSS73_PROYECCION
+- Cliente activo con proyección normal de pensión.
+
+IMSS73_DERECHO_PENSION
+- Ya cumple requisitos para ejercer derecho a pensión.
+
+IMSS73_GARANTIZADA
+- Escenario de pensión garantizada.
+
+IMSS73_NEGATIVA_PENSION
+- No cumple requisitos para obtener pensión; procede negativa de pensión.
+
+4.2. IMSS Ley 97
+Valores encontrados:
+
+IMSS97_PROYECCION
+- Proyección de retiro normal.
+
+IMSS97_NEGATIVA_PENSION
+- No cumple requisitos para pensionarse.
+
+4.3. ISSSTE Cuentas Individuales
+Valores encontrados:
+
+ISSSTE_PROYECCION
+ISSSTE_PENSION_GARANTIZADA
+ISSSTE_NEGATIVA_PENSION
+ISSSTE_RECURSOS_PROPIOS
+
+[En las fotografías no aparecen descripciones individuales para estos
+cuatro escenarios ISSSTE.]
+
+======================================================================
+5. TIPOS DE DATOS PROPUESTOS PARA MODELADO
+======================================================================
+
+La siguiente lista reproduce las líneas legibles del bloque «Tipos de datos
+propuestos para modelado» y mantiene el orden original.
+
+ 1. id_cliente       VARCHAR(20)
+ 2. nombre           VARCHAR(100)
+ 3. ap_paterno       VARCHAR(50)
+ 4. ap_materno       VARCHAR(50)
+ 5. age              INT
+ 6. f_nacim          DATE
+ 7. genero           CHAR(1)
+ 8. entidad          CHAR(2)
+ 9. nss              VARCHAR(15)
+10. num_issste       VARCHAR(15)
+11. curp             CHAR(18)
+12. correo           VARCHAR(150)
+13. anios_cotizados  INT
+14. anio_fil         INT
+15. sem_cot          INT
+
+[La línea 16 está parcialmente tapada y las posteriores no aparecen en la
+captura. No se transcriben para evitar errores.]
+
+======================================================================
+6. LIMITACIONES DE LA TRANSCRIPCIÓN
+======================================================================
+
+- El diccionario de datos está fragmentado entre distintas capturas; faltan
+  las filas intermedias entre «entidad» y «saldo_ahorro_solidario».
+- La sección de tipos de datos propuestos para modelado solo permite leer
+  de forma completa las líneas 1 a 15.
+- «nss», «num_issste», «curp», «correo», «anios_cotizados», «anio_fil» y
+  «sem_cot» sí se observan en el bloque de tipos SQL, pero sus descripciones
+  no aparecen en las fotografías proporcionadas.
+- Se conservaron los nombres técnicos de columnas y escenarios tal como
+  son visibles en pantalla.
+
+FIN DE LA TRANSCRIPCIÓN

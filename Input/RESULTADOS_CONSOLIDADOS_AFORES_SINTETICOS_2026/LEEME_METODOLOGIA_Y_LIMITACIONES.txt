@@ -1,0 +1,75 @@
+RESULTADOS CONSOLIDADOS SINTETICOS | corte 2026-10-29
+=================================================================
+1) CONTENIDO
+ - 7 CSV de resultados: Banamex (benchmark separado) y XXI Banorte, Coppel,
+   SURA, Profuturo, Invercap y Principal.
+ - Cada CSV contiene 300 filas: 100 IMSS Ley 73, 100 IMSS Ley 97, 100 ISSSTE.
+ - Un consolidado con 2,100 filas / 55 columnas exactamente como fotografías.
+ - COMPARACION_SINTETICA_VS_BANAMEX.csv con 1,800 parejas de comparación.
+ - CONSAR_REFERENCIA_SIN_RESULTADOS_WEB.csv separado: NO es AFORE,
+   NO es una calculadora, por lo cual no se simulan resultados web.
+ - DICCIONARIO_55_CAMPOS.csv y RESUMEN_VALIDACION.json.
+ - generar_resultados_consolidados.py para reproducir con archivos de input.
+
+2) MUY IMPORTANTE: SIMULACIONES, NO RESULTADOS REALES
+ Los datos marcados *_web, incluido Pension_web, son SALIDAS FICTICIAS de
+ una fórmula de prueba propia. No se hizo scraping, consulta o conexión con
+ ninguna calculadora pública. NO equivalen a una oferta, pronóstico aprobado,
+ cotización, derecho pensionario ni datos financieros/operativos reales.
+ estado=SIMULADO_NO_CONSULTADO.
+ Las diferencias por AFORE reflejan únicamente rendimientos de ensayo
+ ARBITRARIOS para probar la aplicación; no miden ni clasifican AFORE.
+
+3) TRAZABILIDAD Y COMPARABILIDAD
+ Se conservaron, byte-a-byte como texto, los 27 campos input visibles
+ desde id_cliente hasta escenario_estimado de los CSV anteriores.
+ Un mismo id_cliente representa el mismo perfil hipotético en los 7 CSV;
+ esto NO implica multiafiliación real.
+ ARCHIVO_ORIGEN y FILA_ORIGEN hacen referencia a las filas físicas del
+ CSV input original (primera fila de datos = 2).
+ El CSV de Banamex se mantiene separado como benchmark.
+
+4) SUPUESTOS MERAMENTE DEMOSTRATIVOS
+ - Tasa anual REAL hipotética neta constante (se expresa como porcentaje):
+   Banamex 4.50, XXI Banorte 4.35, Coppel 4.70, SURA 4.40,
+   Profuturo 4.65, Invercap 4.25, Principal 4.55.
+ - Rendimientos son elecciones arbitrarias, NO tasas publicadas de CONSAR.
+ - Contribuciones mensuales ficticias sobre salario mensual: IMSS73 7.5%,
+   IMSS97 10.0%, ISSSTE 11.5%; NO deben tomarse como cuotas oficiales.
+ - Los cálculos se expresan en MXN de poder adquisitivo de 2026, sin
+   inflación, impuestos, costos, cambios en salarios ni contingencias.
+ - Edad proyectada: 65 si el cliente es menor; edad actual si ya tiene 65+.
+ - El saldo futuro utiliza capitalización mensual equivalente a tasa anual.
+ - Pensión Ley 73: se usa una razón salarial hipotética, NO saldo RCV.
+   El AV mensual NO eleva automáticamente el pago del beneficio Ley 73.
+ - IMSS97/ISSSTE: saldo proyectado / meses ilustrativos (NO cálculo actuarial).
+ - Piso ficticio ilustrativo 6,200 MXN escenario IMSS73_GARANTIZADA y
+   6,500 MXN escenario ISSSTE_PENSION_GARANTIZADA. NO mínimos legales.
+ - Negativa de pensión: salida 0 y modalidad NEGATIVA_HIPOTETICA_NO_DICTAMEN.
+   Estatus no representa resolución administrativa.
+ - Proyecciones a edades +1 y +2 presuponen continuidad de cotización en
+   los escenarios no negativos, sólo a fines de ensayo.
+ - Disposición de recursos web se deja VACÍA: ningún derecho verificable.
+ - saldo_inicial_capturado = RCV + solidario + bono, EXCLUYE AV y vivienda.
+ - saldo_total_web = RCV futuro + solidario futuro + bono + AV inicial futuro.
+   No incluye vivienda, pues su tratamiento depende de régimen y supuestos.
+ - saldo_total_con_av_mensual_web añade las AV mensuales futuras.
+ - rcv_av_proy_web hereda un nombre ambiguo del esquema, incluye AV y por
+   tanto NO debe interpretarse como saldo contable RCV puro.
+ - Tasa de remplazo = 100 * pension mensual / salario mensual.
+ - Densidad = 100 * semanas cotizadas / semanas desde año de afiliación.
+ - Porcentajes se guardan 0-100 (p.ej. 4.50 representa 4.5%), no fracción.
+ - Los dos saldos de ahorro acumulado y total se repiten deliberadamente
+   en este modelo a falta de un contrato real del simulador que los distinga.
+
+5) PRECISIONES
+ - Los campos respetan mayúsculas/minúsculas EXACTAS de las fotografías.
+ - Los CSV son UTF-8 con BOM, comas como separador, punto decimal, dos
+   decimales en todos los importes, fecha ISO-8601, textos identificadores.
+ - CURP/NSS del input sólo se validan sintácticamente sin consulta oficial.
+ - La validez comprobada es ESTRUCTURAL y de consistencia de simulación;
+   NO garantiza derechos, rendimientos, saldos ni pensiones reales.
+
+FUENTES DE CONTEXTO (NO se usaron para asignar rendimientos individuales)
+ CONSAR, Afore registradas a septiembre de 2026:
+ https://consar.gob.mx/gobmx/aplicativo/siset/CuadroInicial.aspx?md=40

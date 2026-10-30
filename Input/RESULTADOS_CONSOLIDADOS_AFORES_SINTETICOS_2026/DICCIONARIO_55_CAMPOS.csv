@@ -1,0 +1,56 @@
+﻿numero,variable,tipo_recomendado_foto,descripcion_foto,nota_aplicacion_sintetica
+1,AFORE,Categórico,AFORE o simulador web al que corresponde el resultado.,
+2,REGIMEN,Categórico,Régimen pensionario bajo el cual se procesó el caso.,
+3,id_cliente,Texto,Identificador único del cliente.,
+4,nombre,Texto,Nombre o nombres del cliente.,
+5,ap_paterno,Texto,Apellido paterno.,
+6,ap_materno,Texto,Apellido materno.,
+7,age,Entero anulable,Edad del cliente.,
+8,f_nacim,Fecha anulable,Fecha de nacimiento.,
+9,genero,Categórico,Género codificado del cliente.,
+10,entidad,Categórico,Código de la entidad federativa.,
+11,nss,Texto,Número de Seguridad Social. Debe manejarse como texto.,IDENTIFICADOR FICTICIO; conservar como TEXTO; NO OFICIAL
+12,num_issste,Texto,Número de identificación ISSSTE. Debe manejarse como texto.,IDENTIFICADOR FICTICIO; conservar como TEXTO; NO OFICIAL
+13,curp,Texto,CURP del cliente.,IDENTIFICADOR FICTICIO; conservar como TEXTO; NO OFICIAL
+14,correo,Texto,Correo electrónico.,
+15,anios_cotizados,Entero,Años de cotización capturados.,
+16,anio_fil,Entero o categórico anulable,Año de afiliación al sistema pensionario.,
+17,sem_cot,Entero anulable,Semanas cotizadas capturadas.,
+18,salario_mensual,Decimal monetario,Salario mensual utilizado como input.,
+19,saldo_rcv,Decimal monetario,"Saldo inicial de Retiro, Cesantía y Vejez.",
+20,saldo_ahorro_solidario,Decimal monetario,Saldo inicial de ahorro solidario.,
+21,porcentaje_ahorro_solidario,Porcentaje,Porcentaje de ahorro solidario capturado.,
+22,saldo_bono_pension,Decimal monetario,Saldo o valor del bono pensionario.,
+23,saldo_av,Decimal monetario,Saldo inicial de ahorro voluntario.,
+24,saldo_vivienda,Decimal monetario,Saldo inicial de vivienda.,
+25,av_mensual,Decimal monetario,Aportación voluntaria mensual.,
+26,regimen_estimado,Categórico,Régimen pensionario estimado en el input.,
+27,ley_bandera,Categórico,Ley pensionaria asignada al cliente.,
+28,escenario_estimado,Categórico,Escenario pensionario esperado para el caso.,
+29,nombre_completo,Texto,Nombre completo formado a partir de nombres y apellidos.,
+30,Pension_web,Decimal monetario anulable,Pensión mensual obtenida del simulador web.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB; PESOS MEXICANOS POR MES
+31,sal_cot_web,Decimal monetario anulable,Salario de cotización mostrado o reconocido por el simulador.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+32,saldo_rcv_web,Decimal monetario anulable,Saldo RCV mostrado o utilizado por el simulador.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+33,disposicion_recursos_web,Decimal monetario anulable,Recursos que el simulador indica que pueden disponerse.,VACÍO: no se puede inferir sin reglas específicas del simulador/derechos
+34,pension_edad_mas_1_web,Decimal monetario anulable,Pensión estimada al calcular el retiro un año después.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+35,pension_edad_mas_2_web,Decimal monetario anulable,Pensión estimada al calcular el retiro dos años después.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+36,edad_retiro_calculo,Entero,Edad de retiro utilizada durante la consulta.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+37,observaciones,Texto,"Resultado, incidencia, rechazo u observación del procesamiento.",
+38,id_checkpoint,Texto,Identificador utilizado para seguimiento y recuperación del proceso.,
+39,ARCHIVO_ORIGEN,Texto,Archivo del que provino originalmente el registro.,
+40,FILA_ORIGEN,Entero,Número de fila del registro en el archivo de origen.,
+41,tasa_remplazo_web,Porcentaje anulable,Tasa de reemplazo obtenida del simulador web.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB; PORCENTAJE EN ESCALA 0-100 (ej. 4.50 = 4.50%)
+42,tasa_rendimiento_web,Porcentaje anulable,Tasa de rendimiento utilizada o mostrada por el simulador.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB; PORCENTAJE EN ESCALA 0-100 (ej. 4.50 = 4.50%)
+43,densidad_cot_web,Porcentaje anulable,Densidad de cotización considerada por el simulador.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB; PORCENTAJE EN ESCALA 0-100 (ej. 4.50 = 4.50%)
+44,saldo_inicial_capturado,Decimal monetario anulable,Saldo inicial ingresado en el formulario web.,"RCV + solidario + bono, EXCLUYE ahorro voluntario y vivienda"
+45,saldo_inicial_incluye_av,Indicador o decimal anulable,Indica o cuantifica si el saldo inicial incluye ahorro voluntario.,
+46,saldo_acumulado_web,Decimal monetario anulable,Saldo acumulado proyectado por el simulador.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+47,estado,Categórico anulable,Estado operativo o de validación del registro.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+48,pension_con_av_web,Decimal monetario anulable,Pensión proyectada incluyendo ahorro voluntario.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+49,saldo_total_web,Decimal monetario anulable,Saldo total proyectado por el simulador.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+50,saldo_total_con_av_mensual_web,Decimal monetario anulable,Saldo total proyectado incluyendo aportación voluntaria mensual.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+51,saldo_acumulado_con_av_web,Decimal monetario anulable,Saldo acumulado proyectado con ahorro voluntario.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+52,modalidad_web,Categórico anulable,Modalidad de pensión obtenida sin ahorro voluntario adicional.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+53,modalidad_con_av_web,Categórico anulable,Modalidad de pensión obtenida al incluir ahorro voluntario.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+54,rcv_proy_web,Decimal monetario anulable,Saldo RCV proyectado sin el escenario adicional de ahorro voluntario.,SIMULACIÓN HIPOTÉTICA; NO CONSULTADO EN NINGÚN SITIO WEB
+55,rcv_av_proy_web,Decimal monetario anulable,Saldo RCV proyectado incluyendo ahorro voluntario.,"Variable heredada: rcv + ahorro voluntario, no saldo estricto de subcuenta RCV"

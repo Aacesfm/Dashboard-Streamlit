@@ -1,0 +1,69 @@
+{
+  "fecha_corte": "2026-10-29",
+  "campo_exacto_en_fotos": 55,
+  "fuente": "Inputs de clientes sintéticos generados en el paso anterior",
+  "registros_consolidados": 2100,
+  "registros_referencia_consar_no_web": 300,
+  "registros_comparacion_con_banamex": 1800,
+  "clientes_unicos": 300,
+  "registros_por_archivo": {
+    "BANAMEX_RESULTADOS.csv": 300,
+    "XXI_BANORTE_RESULTADOS.csv": 300,
+    "COPPEL_RESULTADOS.csv": 300,
+    "SURA_RESULTADOS.csv": 300,
+    "PROFUTURO_RESULTADOS.csv": 300,
+    "INVERCAP_RESULTADOS.csv": 300,
+    "PRINCIPAL_RESULTADOS.csv": 300
+  },
+  "registros_por_regimen_por_afore": {
+    "Banamex": {
+      "IMSS73": 100,
+      "IMSS97": 100,
+      "ISSSTE": 100
+    },
+    "XXI Banorte": {
+      "IMSS73": 100,
+      "IMSS97": 100,
+      "ISSSTE": 100
+    },
+    "Coppel": {
+      "IMSS73": 100,
+      "IMSS97": 100,
+      "ISSSTE": 100
+    },
+    "SURA": {
+      "IMSS73": 100,
+      "IMSS97": 100,
+      "ISSSTE": 100
+    },
+    "Profuturo": {
+      "IMSS73": 100,
+      "IMSS97": 100,
+      "ISSSTE": 100
+    },
+    "Invercap": {
+      "IMSS73": 100,
+      "IMSS97": 100,
+      "ISSSTE": 100
+    },
+    "Principal": {
+      "IMSS73": 100,
+      "IMSS97": 100,
+      "ISSSTE": 100
+    }
+  },
+  "tasa_rendimiento_por_afore_porcentaje_hipotesis": {
+    "Banamex": 4.5,
+    "XXI Banorte": 4.35,
+    "Coppel": 4.7,
+    "SURA": 4.4,
+    "Profuturo": 4.65,
+    "Invercap": 4.25,
+    "Principal": 4.55
+  },
+  "conteo_nulos_disposicion_recursos_web": 2100,
+  "comparabilidad_identidad_y_27_campos_input": "OK",
+  "validaciones_contables_y_negativas": "OK",
+  "estado": "SIMULADO_NO_CONSULTADO",
+  "advertencia": "Salidas web y supuestos son ficticios. No se consultaron simuladores; no son datos, rendimientos ni derechos oficiales."
+}
